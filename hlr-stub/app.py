@@ -11,12 +11,12 @@ def number(msisdn):
     uuid_generated = uuid.uuid4()
     number_1 = msisdn
 
-    data = jsonify(
-        id = f"localhost:5000/resourceFunction/msisdn/{number_1}",
-        uuid = uuid_generated,
-        features = {"name":"joel"}
-    )
-    return data
+    data = {
+        "id" : f"localhost:5002/resourceFunction/msisdn/{number_1}",
+        "uuid" : uuid_generated,
+        "features" : {"name":"joel"}
+    }
+    return jsonify(data)
 
 
 if __name__ == '__main__':
